@@ -1,0 +1,527 @@
+
+.montserrat-montser {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  font-style: normal;
+
+}
+
+.cardo-regular {
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 14px;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+    -webkit-text-size-adjust: 100%;
+    }
+
+body{
+
+    background-color: #ffffff;
+}
+
+
+
+/* MOBILE HEADER */
+header{
+    width: 100%;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar{
+    background-color: white;
+   /*  background-color: rgb(194, 194, 194); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    
+}
+
+.menu_icons{
+    display: flex;
+    position: absolute;
+    left: 15px;
+    align-items: center;
+}
+
+.bars{
+    display:flex;
+    gap: 3px;
+    flex-direction: column;
+    position: absolute;
+}
+
+.bar{
+    width: 23px;
+    height: 4px;
+    background-color: #f33a39;
+    /* background-color: rgb(61, 61, 61); */
+    border-radius: 30px;
+
+
+}
+
+.close{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+
+.close .bar {
+    position: absolute;
+}
+
+.close .bar:first-child {
+    transform: rotate(45deg);
+}
+
+.close .bar:last-child {
+    transform: rotate(-45deg);
+}
+
+.logolink{
+    height:48px;
+}
+
+.logo{
+    height:100%;
+    padding-right: 5px;
+}
+
+
+
+/* MOBILE NAV */
+nav {
+    z-index: 1000;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    top: 56px;
+    position: fixed;
+    max-height: 0; /* Kezdetben rejtett */
+    overflow: hidden; /* Rejtse el a tartalmat, ami túlcsordul */
+    transition: max-height 0.3s ease-in-out; /* Animáció */
+}
+
+
+nav.active {
+    max-height: 336px; /* Állítsd be a megfelelő maximális magasságot */
+}
+
+nav ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+nav ul li{
+    border-bottom: 3px solid #f33a39;
+    padding: 14px 10px;
+
+}
+nav ul li:first-child{
+    border-top: 3px solid #f33a39;
+}
+
+nav ul li a{
+    display:flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    width: 100%;
+
+}
+
+nav ul img{
+    height: 20px;
+    width: 20px;
+}
+
+
+
+nav ul li.active a{
+/*     background-color: #f7e2e2; */
+    font-weight: 600;
+
+}
+
+
+main{
+    color:rgb(19, 19, 19)
+}
+
+
+/* JQUERY SLIDER */
+
+.slider {
+}
+
+.slick-slide img {
+    width: 100%;
+    max-height: 380px;
+    /* Kép szélessége */
+}
+
+.slick-dots li button:before {
+    color: black !important;
+    /* muszáj important, különben a pseudo element átírja */
+}
+
+.slick-slide {
+    transition: all ease-in-out 1s;
+
+}
+
+.slick-active {
+
+}
+
+.slick-current {
+
+}
+
+/*CAROUSEL, CAROUSELTEXT*/
+.carousel{
+    background-color: #373946;
+    }
+
+.carouseltext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+.buttons{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top:40px;
+    margin-bottom: 10px;
+}
+.buttons p:first-child{
+
+    margin-bottom: 13px;
+}
+.carousel h1, .carousel p{
+    color:white;
+    text-align: center;
+    
+}
+
+.carousel h1{
+    margin-top: 20px;
+    font-family: "Cardo", serif;
+
+
+}
+.carousel p{
+    padding: 0 15px;
+    font-size: 90%;
+}
+
+.buttons p{
+    background-color: white;
+    width: 50%;
+    color: #373946;
+    font-weight: 600;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 95%;
+}
+
+/*SERVICES*/
+.services h1{
+    display: none;
+}
+.services{
+    gap: 30px;
+    justify-self: center;
+    max-width: 396px;
+    background-color: #ffffff;
+    align-items: center;
+}
+.servicerow{
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+    gap: 5px;
+}
+
+.servicerow img{
+    width: 100%;
+    height: auto;
+}
+.servicetext{
+
+}
+
+
+/*PROFESSIONS*/
+.professions{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.profbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/index_html/static_background/bg_mid.jpg');
+    background-position: center left;
+    background-size: cover;
+    gap: 10px;
+    text-align: center;
+
+}
+
+.prof {
+    margin: 10px 0; /* according to gap (same or twice the amount) */
+    width: 75%;
+    /* csak gépre
+    background-image: url('images/index_html/static_background/bg_mid.jpg');
+    background-attachment: fixed;
+    background-size: cover; */
+    color:white;
+    max-width: 300px;
+}
+
+
+.prof{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    min-height:200px;
+}
+.prof img{
+    height: 25px;
+}
+.prof .title{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-weight: 470;
+}
+.prof p{
+    line-height: 1.4;
+}
+
+/*RÓLUNK*/
+h1{
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgb(51, 80, 127);
+    font-weight: 500;
+    font-size: 150%;
+}
+h2 {
+    color: rgb(51, 80, 127);
+    font-size: 150%;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+.paragraphbox{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    gap:10px;
+    padding: 18px;
+}
+
+
+/* FOOTER */
+.info, .about{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    color: white;
+    background-color: black;
+
+}
+.info img{
+    padding-bottom: 10px;
+}
+.big{
+    min-width: 50px;
+    width: 14vw;
+    max-width: 60px; 
+}
+.small{
+    min-width: 30px;
+    width: 7vw;
+    max-width: 45px;
+    padding-bottom: 0 !important;
+}
+
+.upper{
+    margin-bottom: 5px;
+}
+
+.info a{
+
+    color:white;
+}
+.fb{
+    margin-right: 20px;
+}
+
+footer .bottom{
+    display: flex;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: rgb(51, 80, 127);
+}
+.footerbot .logo{
+    width: 30vw;
+    min-width: 130px;
+    max-width: 155px;
+    margin-top: 20px;
+}
+/* footer .fb img{
+    margin-left: 20px;
+    margin-top: 3px;
+    height: 30px;
+} */
+
+@media only screen and (min-width: 600px) {
+    /* tablet */
+    .paragraphbox{
+        background-color: #f1f4f8;
+    }
+    .profbox{
+        flex-direction: row;
+        gap: 20px;
+        min-height: 260px;
+        padding: 15px;
+    }
+    .prof{
+        margin:0;
+        width: 35%;
+    }
+
+    .services{
+        gap: 50px;
+        margin: 15px 10%;
+        max-width: 100%;
+    }
+    .servicerow{
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+    }
+    .servicerow img{
+        width: 50%;
+
+    }
+    .services .servicerow:nth-child(3) img,
+    .services .servicerow:nth-child(5) img {
+        order: 2;
+        
+    }
+    .about{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .footerbot{
+        display: flex;
+        width: 85%;
+        align-items: flex-end;
+        justify-content: flex-start;
+        gap: 30px;
+    }
+    .social{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+    .footerbot .logo{
+        margin-top: 0;
+        padding: 0;
+        order: -1;
+    max-width: 120px;
+    }
+    .small{
+        max-width: 30px;
+    }
+    .slick-slider:hover .slick-slide {
+        opacity: 0.5;
+    }
+}
+@media only screen and (min-width: 768px) {
+    /* pc*/
+    *{
+    }
+    .slider{
+        width: 50%;
+
+    }
+    .carousel{
+        display: flex;
+    }
+    .carouseltext{
+        justify-content: center;
+        align-content: space-between;
+        padding-bottom: 10px;
+    }
+    .carouseltext .text{
+        margin-left: 40px;
+
+    }
+    .text h1, .text p{
+        text-align: left;
+        padding: 0;
+    }
+    .buttons{
+        padding-bottom: 0;
+    }
+    .buttons p{
+    }
+    .paragraphbox{
+        margin: 15px 15%;
+    }
+}

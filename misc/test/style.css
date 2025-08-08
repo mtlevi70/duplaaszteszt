@@ -1,0 +1,36 @@
+body {
+    background-color: white; /* A body háttérszíne, ami eltakarja a .dobozhatter maradék részét */
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .doboztarto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Középre igazítás */
+  }
+  
+  .doboz {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-color: transparent; /* Átlátszó doboz */
+    overflow: hidden;
+  }
+  
+  .dobozhatter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: url('https://picsum.photos/400/400'); /* A háttérkép vagy egyéb háttér */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+
+
+
+  
