@@ -19,19 +19,4 @@ document.addEventListener("DOMContentLoaded", function() {
             } 
         });
     });
-    
-  /*   help_button.addEventListener('click', function () {
-        let help_button_id = element.getAttribute('id');
-        console.log(help_button_id);
-        if (!isOpen){
-            help.classList.add('active');
-            isOpen = true;
-        }
-        else{
-            help.classList.remove('active');
-            isOpen = false;
-        } 
-
-    });
- */
 });
