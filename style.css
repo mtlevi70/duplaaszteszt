@@ -54,6 +54,9 @@ header .question h5{
 header p {
     font-weight: 500;
     color: #f33a39;
+    -webkit-text-fill-color: #f33a39;
+    -webkit-text-decoration: none;
+
 
 }
 header .offer{
@@ -62,6 +65,9 @@ header .offer{
 }
 header .offer a{
     text-decoration: none;
+    
+
+
 }
 header .offer p {
     position: relative;
