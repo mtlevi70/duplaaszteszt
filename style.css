@@ -16,7 +16,7 @@
 
 
 body {
-    background-color: #f5f5f5;
+    background-color: #f7f7f8;
 }
 
 h2 {
@@ -76,8 +76,12 @@ header .offer p {
     padding: 10px;
     border-radius: 20px;
     z-index: 1;
+    transition: background-color 0.1s ease;
 
 
+}
+header .offer p:hover{
+    background-color:#dd0b0b;
 }
 
 header .background {
@@ -430,97 +434,119 @@ footer h3 {
 
 /*----termekek.html---- */
 .products{
-   margin: 30px;
-}
-.productbox{
-    background-color: white;
-    padding: 6%;
-    overflow: auto;
-
-}
-
-.productbox .imagebox{
+    margin: 40px auto;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
-}
+    gap: 30px;
 
-.productbox .images{
+}
+section{
+
+}
+.box{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
-    height: auto;
-    align-self: center;
-}
-.productbox .images img{
-    width: 100%;
-    height: auto;
-    object-fit:cover;
-}
-.imagebox h3{
-    margin-bottom: 10px;
-}
-.imagebox h3 span img{
-    width: 15px;
-    margin-left: 3px;
-}
-.imagebox .help{
-    height: 0;
-    overflow: hidden;
-    margin-bottom: 10px;
-    margin-top: -5px;
+    gap: 16px;
+    grid-template-columns: repeat(12, 1fr);
+
 
 }
-.imagebox .help p{
-    color: rgb(56, 56, 56);
-    margin-bottom: 4px;
-    font-size: 14px;
-    line-height: normal;
+article{
 }
-.imagebox .help.active{
-    height: auto;
+section h2{
+    font-size: clamp(1.25rem, 0.4375rem + 2vw, 1.625rem);
+    margin-bottom: 12px;
+}
+.card{
+    grid-column: span 12;
+    border: 1px solid #e6e8eb;
+    padding: 18px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .03);
+    background-color: white;
+    border-radius: 16px;
+    
+}
+.card h3{
 
 }
-.productbox{
-
-}
-.description{
-    margin-top: 7px;
-}
-.floatbox{
+.card .pbox{
     display: flex;
     flex-direction: column;
-}
-.float{
-    align-self: flex-end;
-    margin-top: 10px;
-    background-color: rgba(51, 80, 127, 0.1);
-    padding: 15px;
-    border-radius: 5px;
-
-}
-.float h3{
-    margin-bottom: 7px;
-}
-.description p, .float ul li{
-    font-size:14px;
+    gap: 3px;
+    margin: 15px 0;
     color: rgb(56, 56, 56);
 }
-.description p{
-    line-height: 1.35;
+.card .badges{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
-.float ul li{
+.card .badges div{
+    padding: 4px 8px;
+    border-radius: 999px;
+    /* background-color: #eef6ff; */
+    font-size: 12px;
+    /* border: 1px solid #dbeafe; */
+    background-color: #f044443a;
+    border:1px solid #d3050534
+
+}
+.card details {
+    border-top: 1px dashed #e6e8eb;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.card details ul, .card details p{
+    margin-top: 10px;
+}
+
+.card.info{
+    border: 1px solid #e6e8eb;
+    background: #f9fafb;
+}
+details summary{
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    
+}
+summary:first-of-type{
+    color:#f33a39;
+}
+.help > summary:first-of-type {
+    list-style: none;
     color: black;
 }
-.floatbox{
-    margin-top: 6px;
+.help img{
+    width: 16px;
+    margin-left: 4px;
+}
+.help p{
+    margin-bottom: 10px;
+    padding: 0 10px;
 }
 
 
 
+/*galeria.html*/
+.grid{
+    margin: 40px auto;
+    width: 70%;
+    columns: 5 300px;
+    column-gap: 1.5rem;
+    row-gap:0;
+}
+.grid div{
+    display: inline-block;
+    padding: 5px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
 
-
-
-
+    margin-bottom: 10px;
+}
+.grid div img{
+    width: 100%;
+    object-fit: cover;
+}
 
 
 @media only screen and (min-width: 600px) {
@@ -529,6 +555,12 @@ footer h3 {
         flex-direction: row;
         justify-content: space-around;
     }
+
+    /*termekek.html*/
+    .card.span-6{
+        grid-column: span 6;
+    }
+
 
 }
 
@@ -556,23 +588,26 @@ footer h3 {
         transform: scaleY(1);
         position: relative;
         top: 0;
-        padding: 0;
+        padding: 0 30px;
 
     }
     nav ul{
         flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0;
- 
+        justify-content: space-between;
+        margin: auto;
+        gap:0;
+        max-width: 1150px;
+        padding-inline-start: 0;
+        
     }
     nav ul li a p{
-        padding: 18px 25px;
+        padding: 13px 20px;
 
     }
     nav ul li p{
         font-size: 16px;
         color:#494949;
-        transition: color 0.3s ease
+        transition: color 0.1s ease
     }
     nav ul li a:hover p{
         color:black;
@@ -587,6 +622,11 @@ footer h3 {
     }
     .carousel-text p{
         font-size: 38px;
+    }
+
+    /*termekek.html*/
+    .card.span-4{
+        grid-column: span 4;
     }
 
 }
