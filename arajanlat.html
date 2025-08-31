@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/index_html/favicon/favicon.ico" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <title>Termékek - DuplaÁsz</title>
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <img class="logo" src="images/index_html/header/header_logo.png" alt="logo">
+            <div class="question">
+                <h5>Kérdése van?</h5>
+                <p>+36 30 123 4567</p>
+                <p>+36 1 123 4567</p>
+            </div>
+        </div>
+
+        <div class="offer">
+            <a href="arajanlat.html">
+                <p>Árajánlatkérés</p>
+            </a>
+            <div class="background"></div>
+        </div>
+
+    </header>
+    <div class="navbar-box">
+        <div class="navbar">
+            <a class="logolink" href="index.html"><img class="logo" src="images/index_html/header/header_logo.png"
+                    alt="logo"></a>
+            <div class="menu-toggle">
+                <div class="bars">
+                    <img src="images/index_html/navbar/bars.png">
+                </div>
+                <div class="close">
+                    <img src="images/index_html/navbar/close.png">
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">
+                        <p>Főoldal</p>
+                    </a></li>
+                <li><a class="active" href="arajanlat.html">
+                        <p>Árajánlatkérés</p>
+                    </a></li>
+                <li><a href="termekek.html">
+                        <p>Termékek</p>
+                    </a></li>
+                <li><a href="galeria.html">
+                        <p>Galéria</p>
+                    </a></li>
+                <li><a href="kapcsolat.html">
+                        <p>Kapcsolat</p>
+                    </a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <main>
+        <div class="formbox">
+            <div class="offer_desc">
+                <h2>Árajánlatkérés</h2>
+                <p>Írja le adatait, illetve, hogy miben segíthetünk.</p>
+                <p>Kérjük csatoljon minimum 1 képet is, hogy pontosabb árajánlattal tudjunk szolgálni.</p>
+                <p>Minden mező kitöltése kötelező.</p>
+            </div>
+            <form id="form" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post" id="myform"
+                novalidate>
+                <div class="offer-grid">
+                    <div class="field">
+                        <label id=lastname_label for="lastname">Vezetéknév</label>
+                        <input id="lastname" name="lastname" type="text" placeholder="Vezetéknév" />
+                        <span id="lastname_error"></span>
+                    </div>
+
+                    <div class="field">
+                        <label id=firstname_label for="firstname">Keresztnév</label>
+                        <input id="firstname" name="firstname" type="text" placeholder="Keresztnév" />
+                        <span id="firstname_error"></span>
+                    </div>
+
+
+                    <div class="field">
+                        <label id=phone_label for="phone">Telefonszám</label>
+                        <input id="phone" name="phone" type="text" placeholder="+36 …" />
+                        <span id="phone_error"></span>
+                    </div>
+
+
+                    <div class="field">
+                        <label id=email_label for="email">E‑mail cím</label>
+                        <input id="email" name="email" type="text" placeholder="nev@pelda.hu" />
+                        <span id="email_error"></span>
+                    </div>
+
+
+                    <div class="field span-2">
+                        <label id=desc_label for="desc">Leírás</label>
+                        <textarea id="desc" name="description" rows="5"
+                            placeholder="Írja le, miben segíthetünk."></textarea>
+                        <span id="desc_error"></span>
+                    </div>
+
+
+                    <div id="dropzone" class="field span-2">
+                        <p>Húzza ide a képeket vagy <span class="click">kattintson ide</span> a tallózáshoz</p>
+                        <input id="images" name="images" type="file" accept="image/*" hidden multiple />
+                        <output id="file_list"></output>
+                        <button type="button" id="clear_images">Képek törlése</button>
+                    </div>
+                    <span id="images_error" class="span-2"></span>
+                </div>
+
+
+                <div class="action">
+                    <button class="form_button" id = "form_button" type="submit">Küldés</button>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="about">
+            <div class="footerbox">
+                <h3 id="shop">ÜZLETÜNK</h3>
+                <p><a href="">3300 Eger Merengő u. 1.</a></p>
+                <p>Hétfő - péntek 8:00-17:00</p>
+                <p>Szombat 8:00-12:00</p>
+                <p>Vasárnap zárva</p>
+            </div>
+            <div class="footerbox">
+                <h3>ELÉRHETŐSÉG</h3>
+                <p>(30) 968 7505</p>
+                <p>(36) 410 731</p>
+                <div class="contact-icons">
+                    <a class="fb" href="https://www.facebook.com/profile.php?id=100064388901578"><img class="fb"
+                            src="images/index_html/footer/fb.png" alt="mail"></a>
+                    <a href="mailto:hegyiistvan@gmail.com"><img class="mail" src="images/index_html/footer/mail.png"
+                            alt="facebook"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="white-logo">
+            <img class="scroll-top" src="images/index_html/footer/white_logo.png" alt="fehér logo">
+        </div>
+    </footer>
+
+
+    <script defer src="navbar_mobile.js"></script>
+    <script defer src="validator.js"></script>
+    <script defer src="button_events.js"></script>
+
+</body>
+
+</html>
