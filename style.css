@@ -33,18 +33,14 @@ body {
 
 h2 {
     font-size: 26px;
-    font-weight: 550;
+    font-weight: 500;
 }
 
-h3 {
+h4 {
     font-weight: 520;
     font-size: 19px;
 }
 
-h5 {
-    font-weight: 650 !important;
-
-}
 
 
 /* HEADER */
@@ -58,18 +54,30 @@ header {
     border-bottom: 1px solid var(--header-border);
 }
 
-header .logo {
-    display: initial;
+header .about {
+    display: none;
 }
 
 header .question h5 {
     margin-bottom: 3px;
 }
+header .contact_icons{
+    margin: 0;
+    margin-top: 4px;
+}
+header .contact_icons img{
+    margin-right: 10px;
+    width: 30px;
+}
 
-.left p, .offer p {
+header p, header span, nav {
     font-weight: 500;
     color: var(--p-red-dark);
     -webkit-text-fill-color: var(--p-red-dark);
+}
+header span{
+    color: var(--p-gray-light);
+    -webkit-text-fill-color: var(--p-gray-light);
 }
 
 .offer {
@@ -126,6 +134,7 @@ header .question h5 {
     justify-content: space-between;
     border-bottom: 1px solid var(--header-border);
     position: relative;
+        
 
 }
 
@@ -166,7 +175,6 @@ nav {
     transform-origin: top;
     transform: scaleY(0);
     transition: transform 0.3s ease;
-    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
     border-bottom: 1px solid var(--header-border);
 }
 
@@ -181,12 +189,14 @@ nav ul {
     list-style-type: none;
     gap: 30px;
     margin: 10px 0;
+    align-items: center;
+    padding-inline-start: 0;
 
 }
 
 nav ul li a p {
-    font-size: 16px;
-    font-weight: 530;
+    font-size: 17px;
+    font-weight: 500;
     color: var(--p-gray-light);
 }
 
@@ -374,7 +384,8 @@ nav.active {
 .servicebox h3 {
     margin: 10px 20px;
     margin-bottom: 4px;
-
+    font-weight: 500;
+    font-size: 17px;
     color: rgb(51, 80, 127);
 }
 
@@ -456,7 +467,6 @@ footer h3 {
     margin-top: 30px;
     display: flex;
     justify-content: center;
-    cursor: pointer;
 }
 
 .white_logo img {
@@ -464,12 +474,7 @@ footer h3 {
 }
 
 
-
-
-
-
-
-/*----termekek.html---- */
+/* termekek.html */
 .products {
     margin: 40px auto;
     max-width: 1200px;
@@ -491,7 +496,7 @@ section {}
 article {}
 
 section h2 {
-    font-size: clamp(1.25rem, 0.4375rem + 2vw, 1.625rem);
+    font-size: 20px;
     margin-bottom: 12px;
 }
 
@@ -506,7 +511,10 @@ section h2 {
 
 }
 
-.card h3 {}
+.card h3 {
+    font-weight: 550;
+    font-size: 16px;
+}
 
 .card .pbox {
     display: flex;
@@ -535,6 +543,7 @@ section h2 {
 .card details {
     margin-top: 10px;
     padding-top: 10px;
+    color: var(--p-gray-light);
 }
 
 .card details ul,
@@ -604,14 +613,19 @@ summary:first-of-type {
     display: flex;
     flex-direction: column;
     align-items: center;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.vr{
+    display: none;
 }
 .formbox {
     max-width: 880px;
+    width: 100%;
     padding: 30px;
 }
 
 .offer_desc {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .offer_desc h2 {
@@ -644,14 +658,12 @@ summary:first-of-type {
     color: red;
 }
 
-.images_error,
-.desc_error {
-    grid-column: span 2;
-}
 
 .field span {
     margin-bottom: 9px;
-
+}
+#images_error{
+    margin: 4px 0;
 }
 
 input,
@@ -690,13 +702,15 @@ input:focus, textarea:focus{
 
 #dropzone {
     position: relative;
-    margin-top: 10px;
     border: 2px dashed var(--input-border);
     border-radius: 8px;
     padding: 20px;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.2s, border-color 0.2s;
+}
+#dropzone p{
+    color: var(--p-gray-light);
 }
 
 #dropzone:hover {
@@ -714,9 +728,6 @@ input:focus, textarea:focus{
     cursor: pointer;
 }
 
-#images_error {
-    margin-top: 6px;
-}
 
 #file_list {
     min-height: 60px;
@@ -735,8 +746,8 @@ input:focus, textarea:focus{
     object-fit: cover;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 5px;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 #clear_images {
@@ -755,8 +766,8 @@ input:focus, textarea:focus{
 
 .action {
     display: flex;
-    margin-top: 20px;
     justify-content: center;
+    margin-top: 5px;
 }
 
 .action button {
@@ -764,17 +775,24 @@ input:focus, textarea:focus{
 }
 
 .contact_main hr{
-    width: 80%;
+    width: 85%;
     height: 2px;
-    color: black;
+    background-color: var(--input-border-focus);
 }
 .contact{
-    padding: 30px;
+    padding: 72px 30px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-self: flex-start;
-    gap: 30px;
+    gap: 10px;
+}
+.contact h3{
+    margin-bottom: 4px;
+}
+.contact p, .contact a{
+    color: var(--p-gray-dark);
+    -webkit-text-fill-color: var(--p-gray-dark);
 }
 .contact .box{
     display: flex;
@@ -783,7 +801,7 @@ input:focus, textarea:focus{
 }
 .contact .map{
     width: 100%;
-    margin: auto;
+    margin: 10px auto;
 }
 
 
@@ -853,9 +871,15 @@ input:focus, textarea:focus{
 @media only screen and (min-width: 1024px) {
 
 /* header */
-header{
-    display: none;
-}
+    header{
+        padding: 20px 150px;
+    }
+    header .left .logo{
+        display: none;
+    }
+    header .about{
+        display: flex;
+    }
  
     /* navbar */
     .navbar-box {
@@ -873,8 +897,9 @@ header{
         justify-content: space-between;
         align-items: center;
         top: 0;
-        padding: 13px 0;
+        padding: 5px 150px;
         width: 100%;
+        
     }
 
 
@@ -882,6 +907,9 @@ header{
         display: flex;
         gap: 40px;
         margin-left: 20px;
+    }
+    nav .left .question, header .offer{
+        display: none;
     }
     nav .left h5, nav .left p{
         font-size: 14px;
@@ -905,7 +933,7 @@ header{
 
     nav ul li a p {
         padding: 13px 20px;
-        font-size: 16px;
+        font-size: 15px;
         transition: color 0.1s ease;
         font-weight: 450;
     }
@@ -952,6 +980,26 @@ header{
     }
 
     /*kapcsolat.html*/
+    .contact_main{
+        flex-direction: row;
+        margin: 40px 170px 40px 170px;
+        justify-content: center;
+        border: 1px solid var(--gray-border-light);
+    }
+    .contact_main hr{
+        display: none;
+    }
+    .contact_main .vr{
+        display: initial;
+        width: 2px;
+        height: 700px;
+        background-color: var(--input-border-focus);
+    }
+    .contact{
+    }
 
+    .formbox{
+        padding: 30px;
+    }
 
 }
