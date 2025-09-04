@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="images/index_html/favicon/favicon.ico" type="image/x-icon">
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=auto"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=auto"
         rel="stylesheet">
     <title>Termékek - DuplaÁsz</title>
 </head>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="offer">
-            <a href="arajanlat.html">
+            <a href="kapcsolat.html">
                 <p>Árajánlatkérés</p>
             </a>
             <div class="background"></div>
@@ -49,12 +49,17 @@
             </div>
         </div>
         <nav>
+            <div class="left">
+                <a href="index.html"><img class="logo" src="images/index_html/header/header_logo.png" alt="logo"></a>
+                <div class="question">
+                    <h5>Kérdése van?</h5>
+                    <p>+36 30 123 4567</p>
+                    <p>+36 1 123 4567</p>
+                </div>
+            </div>
             <ul>
                 <li><a href="index.html">
                         <p>Főoldal</p>
-                    </a></li>
-                <li><a class="active" href="arajanlat.html">
-                        <p>Árajánlatkérés</p>
                     </a></li>
                 <li><a href="termekek.html">
                         <p>Termékek</p>
@@ -62,15 +67,21 @@
                 <li><a href="galeria.html">
                         <p>Galéria</p>
                     </a></li>
-                <li><a href="kapcsolat.html">
+                <li><a class="active" href="kapcsolat.html">
                         <p>Kapcsolat</p>
                     </a></li>
             </ul>
+            <div class="offer">
+                <a href="kapcsolat.html">
+                    <p>Árajánlatkérés</p>
+                </a>
+                <div class="background"></div>
+            </div>
         </nav>
     </div>
 
 
-    <main>
+    <main class="contact_main">
         <div class="formbox">
             <div class="offer_desc">
                 <h2>Árajánlatkérés</h2>
@@ -127,10 +138,47 @@
 
 
                 <div class="action">
-                    <button class="form_button" id = "form_button" type="submit">Küldés</button>
+                    <button class="form_button" id="form_button" type="submit">Küldés</button>
                 </div>
             </form>
 
+        </div>
+        <hr>
+
+        <div class="contact">
+            <div class="box">
+                <div class="contact_card">
+                    <h5>Email</h5>
+                    <p>hegyi.levente24@gmail.com</p>
+                </div>
+                <div class="contact_card">
+                    <h5>Social Media</h5>
+                    <p><a>Facebook</a></p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="contact_card">
+                    <h5>Üzletünk</h5>
+                    <p>3300 Eger, xy utca 35.</p>
+                </div>
+                <div class="contact_card">
+                    <h5>Nyitvatartás</h5>
+                    <p>H-P fasz</p>
+                    <p>H-P fasz</p>
+                    <p>H-P ZÁRVA</p>
+                </div>
+            </div>
+            <div class="box map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2675.018167476735!2d20.386949376735092!3d47.89733366785546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47408d81a5a58dd5%3A0xf6ee659aa649437b!2sDupla%20%C3%81sz%2BA%20Kft!5e0!3m2!1shu!2shu!4v1757004205323!5m2!1shu!2shu" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="box">
+                <div class="contact_card">
+                    <h5>Munkafelmérés</h5>
+                    <p>Hegyi István üv. igazgató</p>
+                    <p>Tel: +36 30 9687-505</p>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -147,7 +195,7 @@
                 <h3>ELÉRHETŐSÉG</h3>
                 <p>(30) 968 7505</p>
                 <p>(36) 410 731</p>
-                <div class="contact-icons">
+                <div class="contact_icons">
                     <a class="fb" href="https://www.facebook.com/profile.php?id=100064388901578"><img class="fb"
                             src="images/index_html/footer/fb.png" alt="mail"></a>
                     <a href="mailto:hegyiistvan@gmail.com"><img class="mail" src="images/index_html/footer/mail.png"
@@ -156,7 +204,7 @@
             </div>
         </div>
 
-        <div class="white-logo">
+        <div class="white_logo">
             <img class="scroll-top" src="images/index_html/footer/white_logo.png" alt="fehér logo">
         </div>
     </footer>
