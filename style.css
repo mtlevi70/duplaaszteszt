@@ -113,12 +113,11 @@ header span {
 .background {
     position: absolute;
     width: 121.75px;
-    ;
     height: 39px;
     background-color: black;
     border-radius: 20px;
-    top: 5px;
-    left: 10px;
+    top: 4px;
+    left: 5px;
 
 }
 
@@ -620,7 +619,13 @@ summary:first-of-type {
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    max-width: 1300px;
+    max-width: 1200px;
+}
+
+.contact_box p,
+.contact_box a {
+    color: var(--p-gray-dark);
+    -webkit-text-fill-color: var(--p-gray-dark);
 }
 
 .vr {
@@ -628,7 +633,7 @@ summary:first-of-type {
 }
 
 .formbox {
-    max-width: 650px;
+    max-width: 550px;
     width: 100%;
     padding: 30px;
 }
@@ -806,11 +811,6 @@ textarea:focus {
     margin-bottom: 4px;
 }
 
-.contact p,
-.contact a {
-    color: var(--p-gray-dark);
-    -webkit-text-fill-color: var(--p-gray-dark);
-}
 
 .contact .box {
     display: flex;
@@ -904,6 +904,12 @@ textarea:focus {
 
     header .about {
         display: flex;
+    }    
+    .background{
+        top: 4px;
+        left: 5px;
+        width: 128.05px;
+        height: 40px;
     }
 
     /* navbar */
