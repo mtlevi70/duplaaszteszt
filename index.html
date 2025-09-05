@@ -223,7 +223,6 @@
     <script type="text/javascript" src="slick-1.8.1/slick/slick.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Slick Slider inicializálása
             $(".center").slick({
                 dots: false,
                 infinite: true,
@@ -252,22 +251,16 @@
                     }
                 ]
             });
-            // carousel-text váltás hozzáadása
+
             const text = document.querySelectorAll('.carousel-text');
             const totalText = text.length;  // Összes carousel-text elem
             let currentText = 0;
             text[currentText].classList.add('active');
 
-            // Esemény figyelése, hogy csak akkor változtasson a carousel-text, amikor ténylegesen új slide jön
             $(".center").on('afterChange', function (event, slick, currentSlide) {
-                // Számoljuk ki a megfelelő carousel-text indexet
                 let newTextIndex = currentSlide % totalText;
-                console.log(currentSlide);
-                // Ellenőrizzük, hogy valóban változott a slide (körkörös index kezelés)
                 if (currentText !== newTextIndex) {
-                    // Előző text eltávolítása
                     text[currentText].classList.remove('active');
-                    // Az új text aktiválása
                     currentText = newTextIndex;
                     text[currentText].classList.add('active');
                 }
