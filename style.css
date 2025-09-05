@@ -799,7 +799,7 @@ textarea:focus {
 }
 
 .contact {
-    padding: 72px 30px;
+    padding: 30px 45px 50px 45px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1030,6 +1030,9 @@ textarea:focus {
         justify-content: center;
         border: 1px solid var(--gray-border-light);
     }
+    .contact{
+            padding: 72px 30px;
+    }
 
     .contact_box hr {
         display: none;
@@ -1042,7 +1045,6 @@ textarea:focus {
         background-color: var(--input-border-focus);
     }
 
-    .contact {}
 
     .formbox {
         padding: 30px;
