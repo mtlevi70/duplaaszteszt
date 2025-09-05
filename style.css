@@ -170,7 +170,6 @@ header span {
 
 /* nav */
 nav {
-    padding: 20px 0;
     position: sticky;
     top: 48px;
     background-color: white;
@@ -191,22 +190,33 @@ nav ul {
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    gap: 30px;
     margin: 10px 0;
     align-items: center;
     padding-inline-start: 0;
 
 }
 
+nav ul li {
+    width: 100%;
+
+}
+
 nav ul li a p {
+
     font-size: 17px;
     font-weight: 500;
     color: var(--p-gray-light);
 }
 
 nav li a {
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     color: black;
+    width: 100%;
+    padding: 15px 0;
+
+
 }
 
 nav ul li a.active p {
@@ -904,8 +914,9 @@ textarea:focus {
 
     header .about {
         display: flex;
-    }    
-    .background{
+    }
+
+    .background {
         top: 4px;
         left: 5px;
         width: 128.05px;
@@ -1030,8 +1041,9 @@ textarea:focus {
         justify-content: center;
         border: 1px solid var(--gray-border-light);
     }
-    .contact{
-            padding: 72px 30px;
+
+    .contact {
+        padding: 72px 30px;
     }
 
     .contact_box hr {
