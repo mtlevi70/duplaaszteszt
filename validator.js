@@ -12,8 +12,12 @@ const desc_error = document.getElementById('desc_error');
 const images = document.getElementById('images');
 const images_error = document.getElementById('images_error');
 const form = document.getElementById('form');
-const email_regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-const phone_regex = /\p{L}/u;
+const email_regex = /^(?=.*@)(?=.*\.).+$/;
+const phone_regex = /^\+?\d+$/;
+const form_success = document.getElementById('form_success');
+const form_button = document.getElementById('form_button');
+const loader = document.getElementById('loader');
+const success_text = document.getElementById('success_text');
 
 function showPreviews(files) {
     const output = document.querySelector("#file_list");
@@ -21,71 +25,53 @@ function showPreviews(files) {
 
     [...files].forEach(file => {
         if (!file.type.startsWith("image/")) return;
-
         const reader = new FileReader();
         reader.onload = (e) => {
             const img = new Image();
             img.src = e.target.result;
-
-            img.onload = () => {
-                // célméret (pl. max 300px széles legyen)
-                const MAX_WIDTH = 80;
-                const scale = MAX_WIDTH / img.width;
-                const canvas = document.createElement("canvas");
-                canvas.width = MAX_WIDTH;
-                canvas.height = img.height * scale;
-
-                const ctx = canvas.getContext("2d");
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-                // tömörített kép (minőség 0.7 → 70%)
-                const compressedDataUrl = canvas.toDataURL("image/jpeg", 0.9);
-
                 const div = document.createElement("div");
-                div.innerHTML = `<img class="thumbnail" src="${compressedDataUrl}" title="${file.name}"/>`;
+                div.innerHTML = `<img class="thumbnail" src="${img.src}" title="${file.name}"/> <p>${file.name}</p>`;
                 output.appendChild(div);
-            };
         };
         reader.readAsDataURL(file);
-
-
     });
 }
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
     /*VALIDATION*/
-
+    form_error = false;
+    e.preventDefault();
     /*név*/
     if (lastname.value == '' || lastname.value == null) {
         lastname_error.innerHTML = 'Nem lehet üres.';
         lastname_error.classList.add('active');
-        e.preventDefault();
+        form_error = true;
     }
     else {
-        fullname_error.innerHTML = '';
+        lastname_error.innerHTML = '';
     }
-    
+
     if (firstname.value == '' || firstname.value == null) {
         firstname_error.innerHTML = 'Nem lehet üres.';
         firstname_error.classList.add('active');
-        e.preventDefault();
+        form_error = true;
     }
     else {
-        fullname_error.innerHTML = '';
+        firstname_error.innerHTML = '';
     }
     /*telefonszám*/
     if (phone.value == '' || phone.value == null) {
         phone_error.innerHTML = 'Nem lehet üres.';
         phone_error.classList.add('active');
-        e.preventDefault();
+        form_error = true;
     }
-    else if (phone_regex.test(phone.value)) {
+    else if (!phone_regex.test(phone.value)) {
         phone_error.innerHTML = 'Nem lehet benne betű.';
-        e.preventDefault();
+        form_error = true;
     }
-    else if (phone.value.length < 9) {
-        phone_error.innerHTML = 'Minimum 9 karakter.';
-        e.preventDefault();
+    else if (phone.value.length < 7) {
+        phone_error.innerHTML = 'Minimum 7 karakter.';
+        form_error = true;
     }
     else {
         phone_error.innerHTML = '';
@@ -95,11 +81,11 @@ form.addEventListener('submit', (e) => {
     if (email.value == '' || email.value == null) {
         email_error.innerHTML = 'Nem lehet üres.';
         email_error.classList.add('active');
-        e.preventDefault();
+        form_error = true;
     }
     else if (!email_regex.test(email.value)) {
         email_error.innerHTML = 'Érvénytelen formátum.';
-        e.preventDefault();
+        form_error = true;
     }
     else {
         email_error.innerHTML = '';
@@ -109,7 +95,7 @@ form.addEventListener('submit', (e) => {
     if (desc.value == '' || desc.value == null) {
         desc_error.innerHTML = 'Nem lehet üres.';
         desc_error.classList.add('active');
-        e.preventDefault();
+        form_error = true;
     }
     else {
         desc_error.innerHTML = '';
@@ -118,13 +104,48 @@ form.addEventListener('submit', (e) => {
     if (images.files.length === 0) {
         images_error.innerHTML = 'Minimum 1 kép feltöltése kötelező.'
         images_error.classList.add('active');
-        e.preventDefault();
+        form_error = true;
     }
     else {
         images_error.innerHTML = '';
     }
-});
+    /* beküldés, visszajelző üzenet */
+    if (!form_error) {
+        form_button.innerHTML = '⠀';
+        loader.style.display = 'block';
+        form_button.style.pointerEvents = 'none';
+        const formData = new FormData(form);
+        try {
+            const response = await fetch("https://httpbin.org/post", { /* teszt link */
+                method: "POST",
+                body: formData
+            });
+            const data = await response.json();
+            /* console.log(JSON.stringify(data, null, 2)); */
+            loader.style.display = 'none';
+            form_button.innerHTML = 'Küldés';
+            form_button.style.pointerEvents = 'initial';
+            success_text.innerHTML = 'Árajánlat beküldése sikeres!';
+            success_text.style.webkitTextFillColor = 'green';
+            form_success.classList.add('active');
+            setTimeout(function () {
+                form_success.classList.remove("active");
+            }, 5000);
+        } catch (error) {
+            console.log(error);
+            loader.style.display = 'none';
+            form_button.innerHTML = 'Küldés';
+            form_button.style.pointerEvents = 'initial';
+            success_text.innerHTML = 'Árajánlat beküldése sikertelen!';
+            success_text.style.webkitTextFillColor = 'red';
+            form_success.classList.add('active');
+            setTimeout(function () {
+                form_success.classList.remove("active");
+            }, 5000);
+        }
+    }
 
+});
 /*írásnál validation reset*/
 
 firstname.addEventListener('input', () => {
@@ -161,7 +182,7 @@ dropzone.addEventListener("click", (e) => {
 });
 
 dropzone.addEventListener("dragover", (e) => {
-    e.preventDefault();
+
     dropzone.classList.add("dragover");
 });
 
@@ -171,7 +192,6 @@ dropzone.addEventListener("dragleave", () => {
 
 dropzone.addEventListener("drop", (e) => {
     dropzone.classList.remove("dragover");
-    e.preventDefault();
     images.files = e.dataTransfer.files;  // hozzárendeljük az inputhoz
     showPreviews(images.files);
 });
@@ -185,7 +205,7 @@ clear_images.addEventListener("click", (e) => {
     document.querySelector("#file_list").innerHTML = "";
 })
 
-document.querySelector("#images").addEventListener("change", (e) => {
+images.addEventListener("change", (e) => {
     showPreviews(e.target.files);
 });
 

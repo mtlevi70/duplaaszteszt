@@ -87,7 +87,7 @@
     </div>
 
 
-    <main class = "contact_main">
+    <main class="contact_main">
         <div class="contact_box">
             <div class="formbox">
                 <div class="offer_desc">
@@ -96,32 +96,36 @@
                     <p>Kérjük csatoljon minimum 1 képet is, hogy pontosabb árajánlattal tudjunk szolgálni.</p>
                     <p>Minden mező kitöltése kötelező.</p>
                 </div>
-                <form id="form" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post" id="myform"
-                    novalidate>
+                <!-- <form id="form" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post" id="myform" novalidate> -->
+                <form id="form" autocomplete="on">
                     <div class="offer-grid">
                         <div class="field">
                             <label id=lastname_label for="lastname">Vezetéknév</label>
-                            <input id="lastname" name="lastname" type="text" placeholder="Vezetéknév" />
+                            <input id="lastname" name="lastname" type="text" placeholder="Vezetéknév"
+                                autocomplete="given-name" />
                             <span id="lastname_error"></span>
                         </div>
 
                         <div class="field">
                             <label id=firstname_label for="firstname">Keresztnév</label>
-                            <input id="firstname" name="firstname" type="text" placeholder="Keresztnév" />
+                            <input id="firstname" name="firstname" type="text" placeholder="Keresztnév"
+                                autocomplete="family-name" />
                             <span id="firstname_error"></span>
                         </div>
 
 
                         <div class="field">
                             <label id=phone_label for="phone">Telefonszám</label>
-                            <input id="phone" name="phone" type="text" placeholder="+36 …" />
+                            <input id="phone" name="phone" type="text" placeholder="+36 …"
+                                autocomplete="tel-national" />
                             <span id="phone_error"></span>
                         </div>
 
 
                         <div class="field">
                             <label id=email_label for="email">E‑mail cím</label>
-                            <input id="email" name="email" type="text" placeholder="nev@pelda.hu" />
+                            <input id="email" name="email" type="text" placeholder="nev@pelda.hu"
+                                autocomplete="email" />
                             <span id="email_error"></span>
                         </div>
 
@@ -146,12 +150,15 @@
 
                     <div class="action">
                         <button class="form_button" id="form_button" type="submit">Küldés</button>
+                        <div id="loader"></div>
                     </div>
                 </form>
-
+            </div>
+            <div id="form_success">
+                <p id="success_text">Árajánlat beküldése sikeres!</p>
             </div>
             <hr>
-            <div class="vr"></div>
+            
             <div class="contact">
                 <div class="box">
                     <div class="contact_card">
@@ -191,9 +198,7 @@
                 </div>
             </div>
         </div>
-
     </main>
-
     <footer>
         <div class="about">
             <div class="footerbox">
@@ -205,8 +210,8 @@
             </div>
             <div class="footerbox">
                 <h3>ELÉRHETŐSÉG</h3>
-                <p>(30) 968 7505</p>
-                <p>(36) 410 731</p>
+                <p>Mobil: (30) 968 7505</p>
+                <p>Üzlet: (36) 410 731</p>
                 <div class="contact_icons">
                     <a class="fb" href="https://www.facebook.com/profile.php?id=100064388901578"><img class="fb"
                             src="images/index_html/footer/facebook_white.png" alt="facebook"></a>
@@ -220,7 +225,6 @@
             <img src="images/index_html/footer/white_logo.png" alt="fehér logo">
         </div>
     </footer>
-
 
     <script defer src="navbar_mobile.js"></script>
     <script defer src="validator.js"></script>
