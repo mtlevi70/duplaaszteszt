@@ -1,5 +1,4 @@
 * {
-    /*--live-from NOW https://www.youtube.com/watch?v=fWyPgZ-m4-0 best*/
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -29,7 +28,6 @@
 
 
 body {
-    /* background-color: #f7f7f8; */
     background-color: white;
 }
 
@@ -159,7 +157,6 @@ header span {
     top: 0;
     left: 0;
     width: 100%;
-    /* opcionális, ha nem natív méret */
     height: 100%;
 }
 
@@ -297,7 +294,6 @@ nav.active {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.02);
-    /* fekete 40% átlátszósággal */
     z-index: 1;
 }
 
@@ -414,7 +410,6 @@ nav.active {
     background-image: url('images/index_html/professions/prof_bg.jpg');
     background-size: cover;
     background-position: center;
-    /* background-attachment: fixed; */
 }
 
 .profbox {
@@ -469,6 +464,9 @@ footer h3 {
 
 .contact_icons {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
 }
 
 .contact_icons img {
@@ -546,9 +544,7 @@ section h2 {
 .card .badges div {
     padding: 4px 8px;
     border-radius: 999px;
-    /* background-color: #eef6ff; */
     font-size: 12px;
-    /* border: 1px solid #dbeafe; */
     background-color: var(--red-light);
     border: 1px solid var(--red-light-border);
 }
@@ -635,6 +631,8 @@ summary:first-of-type {
 .contact_box p,
 .contact_box a {
     color: var(--p-gray-dark);
+}
+.contact_box a{
     -webkit-text-fill-color: var(--p-gray-dark);
 }
 
@@ -704,6 +702,10 @@ textarea:focus {
     outline: 1px solid var(--input-border-focus);
 }
 
+.action {
+    position: relative;
+}
+
 .formbox .form_button {
     background-color: white;
     border: 1px solid gray;
@@ -714,6 +716,38 @@ textarea:focus {
     text-decoration: none;
     cursor: pointer;
     transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+#loader {
+    display: none;
+    position: absolute;
+    width: 30px;
+    padding: 5px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--p-red-dark-focus);
+    --_m:
+        conic-gradient(#0000 10%, #000),
+        linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+    mask: var(--_m);
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
+    animation: l3 1s infinite linear;
+    top: 7.5px;
+    pointer-events: initial;
+}
+
+@keyframes l3 {
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes l2 {
+    to {
+        transform: rotate(1turn)
+    }
 }
 
 .formbox .form_button:hover {
@@ -752,30 +786,45 @@ textarea:focus {
 
 #dropzone .click {
     color: #007bff;
+    -webkit-text-fill-color: #007bff;
     text-decoration: underline;
     cursor: pointer;
 }
 
 
 #file_list {
-    min-height: 60px;
+    min-height: 55px;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    gap: 20px;
+    align-items: center;
+    gap: 5px;
     margin-top: 30px;
     margin-bottom: 30px;
-
+}
+#file_list div{
+    width: 80%;
+    height: 55px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 #file_list img {
     object-fit: cover;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 5px;
-    width: 60px;
-    height: 60px;
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+}
+#file_list p{
+    text-align: left;
+    font-size: 12px;
+    color: var(--p-gray-dark);
+    padding-right: 10px;
 }
 
 #clear_images {
@@ -833,6 +882,31 @@ textarea:focus {
     margin: 10px auto;
 }
 
+#form_success {
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+    position: fixed;
+    margin: auto;
+    bottom: 10px;
+    padding: 13px;
+    color: white;
+    -webkit-text-fill-color: white;
+    font-size: 17px;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+#form_success.true{
+    background-color: #78C841;
+}
+#form_success.false{
+    background-color: var(--p-red-dark);
+}
+
+#form_success.active {
+    transform: scaleY(1);
+}
 
 @media only screen and (min-width: 600px) {
 
@@ -1043,7 +1117,9 @@ textarea:focus {
     }
 
     .contact {
-        padding: 72px 30px;
+        padding: 0 30px;
+        margin: 72px 0;
+        border-left: 1px solid var(--input-border-focus);
     }
 
     .contact_box hr {
