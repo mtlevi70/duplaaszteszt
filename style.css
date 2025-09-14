@@ -702,20 +702,26 @@ textarea:focus {
     outline: 1px solid var(--input-border-focus);
 }
 
+
 .action {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
     position: relative;
+    height: 45px;
 }
 
 .formbox .form_button {
     background-color: white;
     border: 1px solid gray;
+    height: 45px;
     border-radius: 23px;
     color: var(--p-gray-light);
-    padding: 12px 28px;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+    width: 200px;
 }
 
 #loader {
@@ -841,15 +847,6 @@ textarea:focus {
     cursor: pointer;
 }
 
-.action {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-}
-
-.action button {
-    width: 300px;
-}
 
 .contact_box hr {
     width: 85%;
@@ -885,6 +882,8 @@ textarea:focus {
 #form_success {
     z-index: 3;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
     position: fixed;
     margin: auto;
@@ -907,7 +906,9 @@ textarea:focus {
 #form_success.active {
     transform: scaleY(1);
 }
-
+#close_success{
+    cursor: pointer;
+}
 @media only screen and (min-width: 600px) {
 
     .about {

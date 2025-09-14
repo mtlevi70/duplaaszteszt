@@ -37,6 +37,32 @@ function showPreviews(files) {
     });
 }
 
+
+function formSuccess(success) {
+    loader.style.display = 'none';
+    form_button.style.display = 'block';
+    form_success.classList.add('active');
+    close_success.addEventListener('click', () => {
+        form_success.classList.remove('active');
+    });
+    setTimeout(function () {
+        form_success.classList.remove("active");
+    }, 5000);
+    if (success == true) {
+        success_text.innerHTML = 'Árajánlat beküldése sikeres!';
+        form_success.classList.add('true');
+    }
+    else if (success == false) {
+        success_text.innerHTML = 'Árajánlat beküldése sikertelen!';
+        form_success.classList.add('false');
+    }
+    else if (success == 'server_error') {
+        success_text.innerHTML = 'Szerver hiba, próbálja újra később!';
+        form_success.classList.add('false');
+    }
+
+}
+
 form.addEventListener('submit', async (e) => {
     /*VALIDATION*/
     form_error = false;
@@ -105,10 +131,10 @@ form.addEventListener('submit', async (e) => {
     }
     /* beküldés, visszajelző üzenet */
     form_success.className = '';
+
     if (!form_error) {
-        form_button.innerHTML = '⠀';
         loader.style.display = 'block';
-        form_button.style.pointerEvents = 'none';
+        form_button.style.display = 'none';
         const formData = new FormData(form);
         try {
             const response = await fetch("https://httpbin.org/post", { /* teszt link */
@@ -117,35 +143,13 @@ form.addEventListener('submit', async (e) => {
             });
             const data = await response.json();
             /* console.log(JSON.stringify(data, null, 2)); */
-            loader.style.display = 'none';
-            form_button.innerHTML = 'Küldés';
-            form_success.classList.add('true');
-            form_button.style.pointerEvents = 'initial';
-            success_text.innerHTML = 'Árajánlat beküldése sikeres!';
-            form_success.classList.add('active');
-            setTimeout(function () {
-                form_success.classList.remove("active");
-            }, 5000);
+            formSuccess(true);
         } catch (error) {
-            console.log(error);
-            loader.style.display = 'none';
-            form_button.innerHTML = 'Küldés';
-            form_button.style.pointerEvents = 'initial';
-            form_success.classList.add('false');
-            success_text.innerHTML = 'Az árajánlatkérés most nem üzemel.';
-            form_success.classList.add('active');
-            setTimeout(function () {
-                form_success.classList.remove("active");
-            }, 5000);
+            formSuccess("server_error");
         }
     }
     else {
-        success_text.innerHTML = 'Árajánlat beküldése sikertelen!';
-        form_success.classList.add('false');
-        form_success.classList.add('active');
-        setTimeout(function () {
-            form_success.classList.remove("active");
-        }, 5000);
+        formSuccess(false);
     }
 
 });
