@@ -20,11 +20,18 @@ const success_text = document.getElementById('success_text');
 const close_success = document.getElementById('close_success');
 
 function showPreviews(files) {
+    let fileError = false;
     const output = document.querySelector("#file_list");
     output.innerHTML = "";
 
     [...files].forEach(file => {
-        if (!file.type.startsWith("image/")) return;
+        if (!file.type.startsWith("image/")){
+            fileError = true;
+            images_error.innerHTML = 'Csak képfájlok tölthetők fel.';
+            images.value = "";
+            output.innerHTML = "";
+            return;
+        };
         const reader = new FileReader();
         reader.onload = (e) => {
             const img = new Image();
@@ -142,7 +149,7 @@ form.addEventListener('submit', async (e) => {
                 body: formData,
             });
             const data = await response.json();
-            /* console.log(JSON.stringify(data, null, 2)); */
+            console.log(JSON.stringify(data, null, 2));
             formSuccess(true);
         } catch (error) {
             formSuccess("server_error");

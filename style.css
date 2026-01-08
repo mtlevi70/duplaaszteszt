@@ -2,9 +2,9 @@
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-size: 14px;
-    font-family: "Montserrat", serif;
-    font-weight: 450;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
     font-style: normal;
     -webkit-text-size-adjust: 100%;
 
@@ -38,7 +38,7 @@ h2 {
 
 h4 {
     font-weight: 520;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 
@@ -73,7 +73,6 @@ header .contact_icons img {
 }
 
 header p {
-    font-weight: 500;
     color: var(--p-red-dark);
     -webkit-text-fill-color: var(--p-red-dark);
 }
@@ -110,12 +109,14 @@ header span {
 
 .background {
     position: absolute;
-    width: 121.75px;
-    height: 39px;
+    width: 128.05px;
+    height: 40px;
     background-color: black;
     border-radius: 20px;
     top: 4px;
     left: 5px;
+
+
 
 }
 
@@ -200,7 +201,7 @@ nav ul li {
 
 nav ul li a p {
 
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--p-gray-light);
 }
@@ -260,7 +261,7 @@ nav.active {
 }
 
 .carousel-text p {
-    font-size: 25px;
+    font-size: 26px;
     font-weight: 300;
 }
 
@@ -358,7 +359,7 @@ nav.active {
     margin-bottom: 10px;
 }
 
-.services h2 {
+.services h1 {
     margin-bottom: 10px;
 }
 
@@ -395,7 +396,6 @@ nav.active {
     margin: 10px 20px;
     margin-bottom: 4px;
     font-weight: 500;
-    font-size: 16px;
     color: rgb(51, 80, 127);
 }
 
@@ -429,7 +429,6 @@ nav.active {
     align-items: center;
     justify-content: center;
     margin-bottom: 7px;
-    font-size: 16px;
     font-weight: 550;
 }
 
@@ -441,7 +440,7 @@ nav.active {
 footer {
     background-color: black;
     color: white;
-    padding: 60px 50px 0px 50px;
+    padding: 40px 50px 0px 50px;
 }
 
 .about {
@@ -475,7 +474,7 @@ footer h3 {
 
 
 .white_logo {
-    margin-top: 30px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
 }
@@ -524,7 +523,6 @@ section h2 {
 
 .card h3 {
     font-weight: 550;
-    font-size: 16px;
 }
 
 .card .pbox {
@@ -547,6 +545,44 @@ section h2 {
     font-size: 12px;
     background-color: var(--red-light);
     border: 1px solid var(--red-light-border);
+}
+
+.tooltip {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+.tooltiptext {
+    position: absolute;
+    visibility: hidden;
+    /* bottom: 125%; */
+    left: 0;
+    top: 20px;
+
+    background-color: white;
+    border: 1px solid var(--gray-border-light);
+    border-radius: 6px;
+    padding: 5px 10px;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.2s;
+    width: 100%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltiptext ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.tooltiptext ul li {
+    font-size: 14px;
+    margin: 5px 0;
 }
 
 .card details {
@@ -632,7 +668,8 @@ summary:first-of-type {
 .contact_box a {
     color: var(--p-gray-dark);
 }
-.contact_box a{
+
+.contact_box a {
     -webkit-text-fill-color: var(--p-gray-dark);
 }
 
@@ -809,7 +846,8 @@ textarea:focus {
     margin-top: 30px;
     margin-bottom: 30px;
 }
-#file_list div{
+
+#file_list div {
     width: 80%;
     height: 55px;
     border-radius: 10px;
@@ -826,7 +864,8 @@ textarea:focus {
     height: 35px;
     margin-left: 10px;
 }
-#file_list p{
+
+#file_list p {
     text-align: left;
     font-size: 12px;
     color: var(--p-gray-dark);
@@ -891,24 +930,28 @@ textarea:focus {
     padding: 13px;
     color: white;
     -webkit-text-fill-color: white;
-    font-size: 17px;
+    font-size: 18px;
     transform-origin: bottom;
     transform: scaleY(0);
     transition: transform 0.3s ease;
 }
-#form_success.true{
+
+#form_success.true {
     background-color: #78C841;
 }
-#form_success.false{
+
+#form_success.false {
     background-color: var(--p-red-dark);
 }
 
 #form_success.active {
     transform: scaleY(1);
 }
-#close_success{
+
+#close_success {
     cursor: pointer;
 }
+
 @media only screen and (min-width: 600px) {
 
     .about {
@@ -958,7 +1001,7 @@ textarea:focus {
     }
 
     .carousel-text p {
-        font-size: 33px;
+        font-size: 34px;
     }
 
 
@@ -974,9 +1017,6 @@ textarea:focus {
 
 @media only screen and (min-width: 1024px) {
 
-    * {
-        font-size: 15px;
-    }
 
     /* header */
     header {
@@ -1055,7 +1095,7 @@ textarea:focus {
 
     nav ul li a p {
         padding: 13px 20px;
-        font-size: 15px;
+        font-size: 16px;
         transition: color 0.1s ease;
         font-weight: 450;
     }
@@ -1089,7 +1129,7 @@ textarea:focus {
     }
 
     .servicebox h3 {
-        font-size: 17px;
+        font-size: 18px;
     }
 
 
