@@ -20,7 +20,7 @@
     <header>
         <div class="left">
             <div class="question">
-                <h5>Kérdése van?</h5>
+                <h4>Kérdése van?</h4>
                 <p><span>Mobil: </span>(30) 968 7505</p>
                 <p><span>Üzlet: </span>(36) 410 731</p>
             </div>
@@ -34,7 +34,7 @@
                         alt="email"></a>
             </div>
             <div class="shop">
-                <h5>Üzletünk</h5>
+                <h4>Üzletünk</h4>
                 <p><a href="https://maps.app.goo.gl/dn15Aty8yUmBXUTB7">3300 Eger Merengő u. 1.</a></p>
             </div>
         </div>
@@ -87,23 +87,38 @@
     </div>
 
 
-    <main>
-        <div class="gallery-grid">
-            <div><img src="images/galeria.html/asztal1.jpg" alt="asztal"></div>
-            <div><img src="images/galeria.html/asztal2.jpg" alt="asztal"></div>
-            <div><img src="images/galeria.html/fotel.jpg" alt="fotel"></div>
-            <div><img src="images/galeria.html/hajo.jpg" alt="hajó"></div>
-            <div><img src="images/galeria.html/kanape1.jpg" alt="kanapé"></div>
-            <div><img src="images/galeria.html/kanape2.jpg" alt="kanapé"></div>
-            <div><img src="images/galeria.html/kanape3.jpg" alt="kanapé"></div>
-            <div><img src="images/galeria.html/szek.jpg" alt="szék"></div>
-            <div><img src="images/galeria.html/szek2.jpg" alt="szék"></div>
-            <div><img src="images/galeria.html/szek3.jpg" alt="szék"></div>
-            <div><img src="images/galeria.html/szek4.jpg" alt="szék"></div>
-            <div><img src="images/galeria.html/szek5.jpg" alt="szék"></div>
-            <div><img src="images/galeria.html/szekreny.jpg" alt="szekrény"></div>
-            <div><img src="images/galeria.html/varrogep.jpg" alt="varrógép"></div>
+    <main class="gallery-main">
+        <div class="content">
+            <div class="text">
+                <h1>Munkáink</h1>
+                <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi commodi et nobis dolor cumque
+                    minus
+                    illo porro? Commodi sapiente ullam porro. Excepturi non quae illum veritatis. Quod excepturi
+                    mollitia voluptatem!</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/galeria.html/asztal1.jpg" alt="asztal"></div>
+                <div class="gallery-item"><img src="images/galeria.html/asztal2.jpg" alt="asztal"></div>
+                <div class="gallery-item"><img src="images/galeria.html/fotel.jpg" alt="fotel"></div>
+                <div class="gallery-item"><img src="images/galeria.html/hajo.jpg" alt="hajó"></div>
+                <div class="gallery-item"><img src="images/galeria.html/kanape1.jpg" alt="kanapé"></div>
+                <div class="gallery-item"><img src="images/galeria.html/kanape2.jpg" alt="kanapé"></div>
+                <div class="gallery-item"><img src="images/galeria.html/kanape3.jpg" alt="kanapé"></div>
+                <div class="gallery-item"><img src="images/galeria.html/szek.jpg" alt="szék"></div>
+                <div class="gallery-item"><img src="images/galeria.html/szek2.jpg" alt="szék"></div>
+                <div class="gallery-item"><img src="images/galeria.html/szek3.jpg" alt="szék"></div>
+                <div class="gallery-item"><img src="images/galeria.html/szek4.jpg" alt="szék"></div>
+                <div class="gallery-item"><img src="images/galeria.html/szek5.jpg" alt="szék"></div>
+                <div class="gallery-item"><img src="images/galeria.html/szekreny.jpg" alt="szekrény"></div>
+                <div class="gallery-item"><img src="images/galeria.html/varrogep.jpg" alt="varrógép"></div>
+            </div>
+            <div class="lightbox" id="lightbox">
+                <span class="close-btn" id="closeLightbox">&times;</span>
+                <img src="" alt="Nagyított kép" id="lightboxImage">
+            </div>
         </div>
+
+
     </main>
     <footer>
         <div class="about">
@@ -132,7 +147,7 @@
         </div>
     </footer>
 
-
+    <script src="gallery.js"></script>
     <script src="navbar_mobile.js"></script>
 
 </body>
