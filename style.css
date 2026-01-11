@@ -689,13 +689,22 @@ footer h3 {
 .gallery-grid div {
     break-inside: avoid;
     margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 14px;
+
 }
 
 .gallery-grid div img {
     width: 100%;
-    border-radius: 14px;
+    transition: transform 0.2s ease;
     cursor: pointer;
+
 }
+
+.gallery-grid div img:hover {
+    transform: scale(1.1);
+}
+
 
 .lightbox {
     position: fixed;
