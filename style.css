@@ -190,7 +190,7 @@ nav ul {
 
 nav ul li {
     width: 100%;
-    
+
 
 }
 
@@ -818,8 +818,10 @@ textarea {
     border: 1px solid var(--input-border);
     padding: 6px;
 }
-input::placeholder, textarea::placeholder{
-    font-size:14px;
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 14px;
 }
 
 input:focus,
@@ -972,6 +974,11 @@ textarea:focus {
     text-decoration: underline;
     color: var(--p-gray-light);
     cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+#clear_images:hover {
+    transform: scale(1.02);
 }
 
 
@@ -1026,7 +1033,7 @@ textarea:focus {
 }
 
 #success_text {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #form_success.true {
@@ -1135,7 +1142,9 @@ textarea:focus {
     }
 
     /*kapcsolat.html*/
-
+    #success_text {
+        font-size: 16px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
