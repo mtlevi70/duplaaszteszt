@@ -26,6 +26,7 @@ html {
     --input-border-focus: #999;
 }
 
+
 /*----index.html---- */
 
 
@@ -161,11 +162,16 @@ nav {
     top: 48px;
     background-color: white;
     overflow: hidden;
-    /*transition: max-height 0.3s ease-in-out;*/
     transform-origin: top;
     transform: scaleY(0);
     transition: transform 0.3s ease;
     border-bottom: 1px solid var(--header-border);
+    /* height: calc(100vh - 52px); */
+}
+
+nav.resize-animation-stopper {
+    animation: none !important;
+    transition: none !important;
 }
 
 nav .left,
@@ -177,27 +183,26 @@ nav ul {
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    margin: 10px 0;
-    align-items: center;
+    margin: 20px 30px;
     padding-inline-start: 0;
 
 }
 
 nav ul li {
     width: 100%;
+    
 
 }
 
 nav ul li a p {
 
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--p-gray-light);
 }
 
 nav li a {
     display: flex;
-    justify-content: center;
     text-decoration: none;
     color: black;
     width: 100%;
@@ -457,7 +462,15 @@ footer h3 {
 }
 
 .contact_icons img {
+    position: relative;
     width: 30px;
+    transition: transform 0.2s ease;
+
+}
+
+.contact_icons img:hover {
+    transform: scale(1.1);
+
 }
 
 
@@ -486,20 +499,19 @@ footer h3 {
     flex-direction: column;
     gap: 30px;
     margin: 40px;
-    max-width: 1100px;
+    max-width: 400px;
 }
 
 .grid .row {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto;
-
 }
 
 .big.card {
     grid-row-start: 1;
     grid-row-end: 3;
+    min-height: 200px;
 }
 
 .big.card.reverse {
@@ -523,11 +535,12 @@ footer h3 {
 }
 
 .bottom-grid {
-    display: grid;
-    grid-column: 1 / -1;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 8px;
 }
+
+
 
 /*kártya design*/
 .card {
@@ -633,9 +646,10 @@ footer h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
-.gallery-main .content{
+
+.gallery-main .content {
     max-width: 1400px;
     display: flex;
     flex-direction: column;
@@ -649,6 +663,7 @@ footer h3 {
     margin-bottom: 30px;
     font-size: 32px;
 }
+
 .gallery-main h2 {
     font-weight: 400;
     font-size: 18px;
@@ -689,7 +704,7 @@ footer h3 {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
-    visibility:hidden;
+    visibility: hidden;
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -801,7 +816,10 @@ textarea {
     width: 100%;
     border-radius: 5px;
     border: 1px solid var(--input-border);
-    padding: 8px;
+    padding: 6px;
+}
+input::placeholder, textarea::placeholder{
+    font-size:14px;
 }
 
 input:focus,
@@ -1007,6 +1025,10 @@ textarea:focus {
     transition: transform 0.3s ease;
 }
 
+#success_text {
+    font-size: 16px;
+}
+
 #form_success.true {
     background-color: #78C841;
 }
@@ -1042,7 +1064,7 @@ textarea:focus {
 
 
     /*termekek.html*/
-    .gallery-grid{
+    .gallery-grid {
         column-count: 2;
         max-width: 800px;
     }
@@ -1090,8 +1112,26 @@ textarea:focus {
 
 
     /*termekek.html*/
-    .card.span-4 {
-        grid-column: span 4;
+    .grid .row {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+    }
+
+    .grid {
+        max-width: unset;
+    }
+
+    .big.card {
+        min-height: unset;
+    }
+
+    .bottom-grid {
+        display: grid;
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
     }
 
     /*kapcsolat.html*/
@@ -1126,7 +1166,7 @@ textarea:focus {
 
     nav {
         transform: scaleY(1);
-        /* transition: none; */
+        transition: none !important;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1255,10 +1295,16 @@ textarea:focus {
     .formbox {
         padding: 30px;
     }
-        /*termekek.html*/
-    .gallery-grid{
+
+    /*galeria.html*/
+    .gallery-grid {
         column-count: 4;
-        max-width: 1400px;
+        max-width: 1300px;
+    }
+
+    /*galeria.html*/
+    .grid {
+        max-width: 1100px;
     }
 
 }
