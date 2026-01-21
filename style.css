@@ -102,12 +102,13 @@ header span {
 
 .background {
     position: absolute;
-    width: 119.88px;
-    height: 38px;
     background-color: black;
     border-radius: 20px;
     top: 5px;
     left: 4px;
+    width: 134.141px;
+    height: 39px;
+
 }
 
 /* NAVBAR */
@@ -1101,10 +1102,6 @@ textarea:focus {
         font-size: 16px;
     }
 
-    .background {
-        width: 134.141px;
-        height: 39px;
-    }
 
     .carousel {
         height: 550px;
